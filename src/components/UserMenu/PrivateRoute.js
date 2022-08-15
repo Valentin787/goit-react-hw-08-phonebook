@@ -3,9 +3,13 @@ import { Navigate,Outlet } from 'react-router-dom';
 import { authSelectors } from '../../redux/auth'
 
 const PrivateRoute = () => {
-  const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  
+  // const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
+  // console.log(`isLoggedIn ->>`, isLoggedIn)
+  const token = useSelector(authSelectors.getToken);
+  
   return (
-    isLoggedIn ? <Outlet /> : <Navigate to='/sing_in' />
+    token ? <Outlet /> : <Navigate to='/sing_in' />
   )
 };
 

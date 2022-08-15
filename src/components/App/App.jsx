@@ -13,6 +13,7 @@ import PublicRoute from 'components/UserMenu/PublicRoute';
 import { loadingSelector } from '../../redux/phoneBook/phonebook-selectors';
 import { authSelectors, authOperations } from '../../redux/auth';
 
+
 import s from './App.module.css';
 
 
@@ -20,6 +21,7 @@ import s from './App.module.css';
 const SingInPageLazy = lazy(() => import('../../pages/auth/SingInPage'));
 const RegisterLazy = lazy(() => import('../../pages/auth/Register'));
 const ContactsPageLazy = lazy(() => import('../../pages/ContactsPage'));
+const NotFoundPageLazy = lazy(() => import('../../pages/NotFoundPage'));
 
 
 const App = () => {
@@ -72,8 +74,19 @@ const App = () => {
                   <Suspense fallback={<Loader />}>
                     <SingInPageLazy />
                   </Suspense>}
+            />
+              <Route
+                path="*"
+                element={
+                  <Suspense fallback={<Loader/>}>
+                    <NotFoundPageLazy />
+                  </Suspense>
+                }
               />
-            </Route>
+          </Route>
+          
+
+          
             {/* //////////////////////// */}
             <Route element={<PrivateRoute />}>
               <Route
@@ -83,7 +96,8 @@ const App = () => {
                     <ContactsPageLazy />
                   </Suspense>}
               />
-            </Route>
+          </Route>
+
           </Routes>
         </>}
   </div>
