@@ -1,0 +1,29 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  margin-left: 10px;
+}
+.textContainer {
+  display: flex;
+  align-items: center;
+}
+
+.btnDel {
+  height: 30px;
+  width: 40px;
+  border-radius: 10px;
+
+  background-color: rgba(177, 166, 248, 0);
+
+  transition: all 200ms ease-in-out;
+}
+
+.btnDel:hover,
+.btnDel:focus {
+  transform: scale3d(1.1, 1.1, 1.1);
+  color: rgb(72, 57, 165);
+}
