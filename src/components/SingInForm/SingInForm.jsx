@@ -20,8 +20,8 @@ const SingInForm = () => {
   const onFinish = (values) => {
     dispatch(authOperations.logIn({ email, password }));
 
-    setEmail('');
-    setPassword('');
+    // setEmail('');
+    // setPassword('');
   };
 
   return (
