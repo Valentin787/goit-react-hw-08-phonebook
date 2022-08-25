@@ -1,14 +1,13 @@
 import SingInForm from 'components/SingInForm';
+import Appear from 'components/Appear';
+import './style.css'
 
 
 const SingInPage = () => {
-
   return (
-    <div>
-      <div style={{ padding: 20 }}>
-       <SingInForm/>
-      </div>
-    </div>
+    <Appear time={350}>
+      <SingInForm />
+    </Appear>
   )
 }
 

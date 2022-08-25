@@ -1,22 +1,20 @@
-import { useEffect} from 'react';
+import { useEffect,useState,lazy, Suspense} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { lazy, Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
+import { ThemeContext, themes } from "../context/themeContext";
 
-import  AppBar  from 'components/AppBar';
-import  HomePage  from 'pages/HomePage';
-import Loader from '../common/Loader';
-
+import AppBar from 'components/AppBar';
 import PrivateRoute from 'components/UserMenu/PrivateRoute';
 import PublicRoute from 'components/UserMenu/PublicRoute';
+import LanguageSwitcher from 'components/LanguageSwitcher/LanguageSwitcher';
+import Loader from '../common/Loader';
+import HomePage  from 'pages/HomePage';
 
 import { loadingSelector } from '../../redux/phoneBook/phonebook-selectors';
 import { authSelectors, authOperations } from '../../redux/auth';
 
-
 import s from './App.module.css';
-
-
+import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 
 const SingInPageLazy = lazy(() => import('../../pages/auth/SingInPage'));
 const RegisterLazy = lazy(() => import('../../pages/auth/Register'));
@@ -25,6 +23,12 @@ const NotFoundPageLazy = lazy(() => import('../../pages/NotFoundPage'));
 
 
 const App = () => {
+
+  const [theme, setTheme] = useState(themes.light);
+  const toggleTheme = () =>
+    setTheme((prevTheme) =>
+      prevTheme === themes.light ? themes.dark : themes.light
+    );
 
   const loading = useSelector(loadingSelector);
   const fetchloading = useSelector(authSelectors.loadingFetchSelector);
@@ -41,18 +45,33 @@ const App = () => {
   }, [dispatch])
   
   return (
-    <div className={s.app}>
+    <div className={theme === themes.light ? s.appLight : s.appDark}>
+
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+
 {loading && <Loader loading={loading} />}
       
       {!fetchloading &&
         <>
           <AppBar />
+          <div className={s.themeWrap}>
+           
+            <Suspense fallback={<Loader />}>
+              <LanguageSwitcher />
+            </Suspense>
+             <ThemeSwitcher />
+          </div>
+
+        
           <Routes>
 
             <Route
               exact
               path="/"
-              element={<HomePage />}>
+            element={
+              <Suspense fallback={<Loader />}>
+                <HomePage />
+              </Suspense>}>
             </Route>
             {/* //////////////////////// */}
             <Route element={
@@ -99,7 +118,8 @@ const App = () => {
           </Route>
 
           </Routes>
-        </>}
+          </>}
+        </ThemeContext.Provider>
   </div>
   );
 };

@@ -10,10 +10,15 @@ import {
   UserOutlined,
 } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
+import { useTranslation } from 'react-i18next';
 import s from './RegistrationForm.module.css';
 
 
+
 const RegistrationForm = () => {
+
+  const { t } = useTranslation();
+  const lang = useTranslation();
 
   const dispatch = useDispatch()
   const [name, setName] = useState("");
@@ -37,6 +42,12 @@ const RegistrationForm = () => {
    
   const isBtnDisabled = !name || !email || !password;
 
+  const checkLang = lang[1].language;
+  const messageName = checkLang === "en" ? "Please input your username!" : "Введіть будь-ласка ваше ім'я ...";
+  const messageValidEmail = checkLang === "en" ? "The input is not valid E-mail!" : "Не забувайте за '@' :)";
+  const messageEmail = checkLang === "en" ? "Please input your E-mail!" : "Не забувайте ввести ваш E-mail :)";
+   const messagePassword = checkLang === "en" ? "Please input your Password!" : "Не забувайте ввести ваш Пароль :)";
+  
   return (
     <div
       className={s.loginForm}>
@@ -56,59 +67,59 @@ const RegistrationForm = () => {
       onFinish={onFinish}
       autoComplete="off"
     >
-      <Form.Item
+        <Form.Item
       
-        label="UserName"
+          label={t("registerForm.userName")}
         name="name"
         onChange={e => setName(e.target.value)}
         rules={[
           {
             required: true,
-            message: 'Please input your username!',
+            message: messageName,
           },
         ]}
       >
         <Input 
         className={s.containerInput} 
-        placeholder={` Please enter your name  ...`} 
+        placeholder={t("registerForm.namePlaceholder")}
         prefix={<UserOutlined />} />
       </Form.Item>
 
       <Form.Item
         name="email"
-        label="E-mail"
+        label={t("registerForm.email")}
         onChange={e => setEmail(e.target.value)}
         rules={[
           {
             type: 'email',
-            message: 'The input is not valid E-mail!',
+            message: messageValidEmail,
           },
           {
             required: true,
-            message: 'Please input your E-mail!',
+            message: messageEmail,
           },
         ]}
       >
         <Input
         className={s.containerInput} 
-        placeholder=" Please enter your e-mail with -> @  :)"
+        placeholder={t("registerForm.placeholderEmail")}
         prefix={<SettingFilled />}/> 
       </Form.Item>
 
       <Form.Item
-        label="Password"
+        label={t("registerForm.password")}
         name="password"
         onChange={e => setPassword(e.target.value)}
         rules={[
           {
             required: true,
-            message: 'Please input your Password!',
+            message: messagePassword,
           },
         ]}
       >
         <Input.Password  
         className={s.containerInput} 
-        placeholder=" Please enter your password  ..."
+        placeholder={t("registerForm.placeholderPassword")}
         prefix={<LockOutlined />}
         
         />
@@ -124,7 +135,7 @@ const RegistrationForm = () => {
           type="primary"
           htmlType="submit"
           disabled ={isBtnDisabled}>
-          Submit
+          {t("registerForm.buttonRegister")}
         </Button >
 
       </Form.Item>

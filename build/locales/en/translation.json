@@ -1,0 +1,50 @@
+{
+  "userMenu":{
+    "welcome":"Welcome",
+    "btnOut":"Out",
+    "homepage":"Homepage",
+    "phonebook":"Phonebook"
+  },
+  "contactForm":{
+    "headerForm":"Phonebook",
+    "name":"Name",
+    "number":"Number",
+    "button":"Add contact",
+    "headerList":"Contacts"
+  },
+  "filter":{
+    "labelName":"Find contacts by name ..."
+  },
+  "authNav":{
+    "singInName":"Sing In",
+    "registerName":"Register"
+  },
+  "singInForm":{
+    "email":"E-mail",
+    "enterEmail":"Please input your E-mail!",
+    "placeholderEmail":"Please enter your e-mail with -> @  :)",
+
+    "password":"Password",
+    "enterPassword":"Please input your Password!",
+    "placeholderPassword":"Please enter your password  ...",
+    "or":"Or",
+    "buttonLogIn":"Log in",
+    "gooRegisterForm":"Register Now!"
+
+  },
+    "registerForm":{
+      "userName":"UserName",
+      "namePlaceholder":"Please enter your name  ...",
+      "email":"E-mail",
+    
+      "enterEmail":"Введіть вашу електронну скриньку!",
+      "placeholderEmail":"Please enter your e-mail with -> @  :)",
+
+      "password":"Password",
+      "enterPassword":"Please input your Password!",
+      "placeholderPassword":"Please enter your password  ...",
+  
+      "buttonRegister":"Register"
+
+  }
+}

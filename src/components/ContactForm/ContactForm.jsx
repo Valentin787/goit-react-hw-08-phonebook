@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../common/Input';
+import Appear from 'components/Appear';
+import { ThemeContext, themes } from 'components/context/themeContext';
+import { useTranslation } from 'react-i18next';
 
 import s from './ContactForm.module.css';
 
-
-
 const ContactForm = ({confirmContact}) => {
 
+  const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -40,11 +43,16 @@ const ContactForm = ({confirmContact}) => {
 
 
   return (
-    <>
-      <h1>Phonebook</h1>
-      <form onSubmit={onSubFormData} className={s.form}>
+    <Appear time={300}>
+      <h1
+        className={theme === themes.light ? s.headerLight : s.headerDark}
+    
+      >{t("contactForm.headerForm")}</h1>
+      <form
+        onSubmit={onSubFormData}
+        className={theme === themes.light ? s.formLight : s.formDark}>
       <Input
-        label="Name"
+        label={t("contactForm.name")}
         type="text"
         name="name"
         onChange={(e) => setName(e.target.value)}
@@ -55,7 +63,7 @@ const ContactForm = ({confirmContact}) => {
       />
 
       <Input
-        label="Number"
+        label={t("contactForm.number")}
         type="tel"
         name="number"
         onChange={(e) => setNumber(e.target.value)}
@@ -67,11 +75,13 @@ const ContactForm = ({confirmContact}) => {
 
       <button type="submit" className={s.btnAdd}>
         {' '}
-        Add contact
+        {t("contactForm.button")}
       </button>
       </form>
-      <h2>Contacts</h2>
-    </>
+      <h2
+        className={theme === themes.light ? s.headerListLight : s.headerListDark}
+      >{t("contactForm.headerList")}</h2>
+    </Appear>
 
   );
 };

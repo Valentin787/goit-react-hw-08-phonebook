@@ -1,15 +1,62 @@
+.fontFamilyText{
+  font-family: -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  'Noto Sans',
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji';
+}
 .form {
   width: 370px;
   padding: 20px;
-  border: solid 1px rgb(36, 2, 2);
+  
 }
-.form:focus,
-.form:hover {
+.formLight{
+  composes:form;
+  border: solid 2px rgb(36, 2, 2);
+}
+.formDark {
+  composes: form;
+  border: solid 2px rgb(152, 141, 167);
+}
+.formLight:focus,
+.formLight:hover {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
     23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 90px rgba(0, 0, 0, 0.1) inset;
 }
+.formDark:focus,
+.formDark:hover {
+  box-shadow: 0 1px 4px rgb(162, 139, 167), -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+    23px 0 20px -23px rgba(237, 189, 241, 0.8), 0 0 90px rgba(232, 167, 232, 0.1) inset;
+}
+.headerLight{
+  composes:fontFamilyText;
+  color: #010101;
+}
+.headerDark {
+  composes: fontFamilyText;
+  color: #f2eeee;
+}
 
+.headerListLight{
+composes:fontFamilyText;
+color: #010101;
+}
+.headerListDark {
+composes: fontFamilyText;
+color: #f2eeee;
+}
 .btnAdd {
+  composes:fontFamilyText;
+  font-weight: 700;
+  line-height: 24px;
+  font-size: 14px;
   display: block;
   margin: 20px auto 0;
   padding: 5px;

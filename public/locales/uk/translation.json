@@ -1,0 +1,48 @@
+{
+  "userMenu":{
+    "welcome":"Ласкаво просимо",
+    "btnOut":"Вийти",
+    "homepage":"Головна сторінка",
+    "phonebook":"Телефонна книга"
+  },
+    "contactForm":{
+    "headerForm":"Телефонна книга",
+    "name":"Ім'я",
+    "number":"Номер",
+    "button":"Додати контакт",
+    "headerList":"Контакти"
+  },
+  "filter":{
+    "labelName":"Знайти контакт по імені..."
+  },
+  "authNav":{
+    "singInName":"Увійти",
+    "registerName":"Зареєструватись"
+  },
+  "singInForm":{
+    "email":"Eлектронна скринька",
+    "notValidEmail":"Eлектронна скринька введена в невірному форматі",
+    "enterEmail":"Введіть вашу електронну скриньку!",
+    "placeholderEmail":"Введіть вашу електронну скриньку з -> @  :)",
+
+    "password":"Пароль",
+    "enterPassword":"Введіть ваш пароль!",
+    "placeholderPassword":"Введіть будь-ласка ваш пароль  ...",
+    "or":"Чи",
+    "buttonLogIn":"Увійти",
+    "gooRegisterForm":"Створити скриньку!"
+
+  },
+    "registerForm":{
+      "userName":"Ім'я",
+      "namePlaceholder":"Введіть будь-ласка ваше Ім'я  ...",
+      "email":"Eлектронна скринька",
+  
+      "placeholderEmail":"Введіть вашу електронну скриньку з -> @  :)",
+
+      "password":"Пароль",
+      "placeholderPassword":"Введіть будь-ласка ваш пароль  ...",
+      "buttonRegister":"Зареєструватись"
+
+  }
+}

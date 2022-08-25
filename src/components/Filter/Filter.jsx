@@ -1,17 +1,22 @@
+import Appear from 'components/Appear';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import Input from '../common/Input';
 
 function Filter({filterChangeInput,value}) {
+  const { t } = useTranslation();
 
   return (
+    <Appear time={350}>
     <Input
-      label="Find contacts by name"
+      label={t("filter.labelName")}
       type="text"
       onChange={(event)=>filterChangeInput(event.target.value)}
       name="filter"
       value={value}
-    />
+      />
+      </Appear>
   );
 }
 

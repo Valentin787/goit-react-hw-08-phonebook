@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import ItemContact from './ItemContact';
 import s from './ContactList.module.css';
+import Appear from 'components/Appear';
 
 const ContactList = ({
   onDeleteContact,
@@ -9,6 +10,7 @@ const ContactList = ({
   filterContacts }) => {
 
   return (
+    <Appear time={400}>
     <ul className={s.list}>
       {filterContacts && filterContacts.map(({ id, name, number }) => {
         return (
@@ -23,7 +25,8 @@ const ContactList = ({
           />
         );
       })}
-    </ul>
+      </ul>
+      </Appear>
   );
 };
 

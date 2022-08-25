@@ -2,7 +2,21 @@
   padding: 20px;
   width: 80%;
   margin: 0 auto;
-  background-image: url(../../image//ice-castle-ga9e92da86_1280.jpg);
+  
   height: 800px;
   width: 100%;
+}
+.themeWrap{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.appLight{
+  composes:app;
+  background-image: url(../../image/ice-castle-gbd2547da6_1920.jpg);
+}
+.appDark {
+  composes:app;
+  background-image: url(../../image/telephone-g681a412bc_1920.jpg);
 }
