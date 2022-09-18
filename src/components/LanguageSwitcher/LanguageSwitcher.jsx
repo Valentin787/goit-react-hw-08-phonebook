@@ -30,7 +30,10 @@ const LanguageSwitcher = () => {
           className={s.containerBtn}
           key={lng}>
           <button
-            style={{backgroundColor:"rgba(240, 248, 255, 0)"}}
+            style={{
+              backgroundColor: "rgba(240, 248, 255, 0)",
+              marginLeft:"4px"
+            }}
             className="i18n.resolvedLanguage === lng?"
             type="submit"
             onClick={()=> i18n.changeLanguage(lng)}
@@ -40,6 +43,7 @@ const LanguageSwitcher = () => {
               src={languages[lng].icon}
               alt={languages[lng].native}
               width="30px"
+              
             />
           </button>
         </div>

@@ -131,6 +131,8 @@ input,
   align-items: center;
   margin: 0;
   font-size: 1.1rem;
+  min-width:350px;
+  max-width:350px;
 
   .month-active {
     width: 12rem;
@@ -170,6 +172,8 @@ input,
   align-items: center;
   justify-content: center;
   user-select: none;
+  min-width:350px;
+  max-width:350px;
 }
 
 .weekdays,

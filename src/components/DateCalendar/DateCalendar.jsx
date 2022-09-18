@@ -157,7 +157,10 @@ class DateCalendar extends React.Component {
         <div className="section-container">
           <Appear time ={500}>
           <div className="calendar calendar-container"
-            style={{ maxWidth: "60%" }}>     
+              style={{
+                maxWidth: "350px",
+                minWidth: "350px"
+              }}>     
             <CalendarDaysForm
               prevYear={this.prevYear}
               prevMonth={this.prevMonth}
