@@ -13,10 +13,8 @@ const BigButton = ({
   return (
     <button
       type={type === "submit" ? "submit" : "button"}
-    
       className={disabled ? s.disabled : s.btn}
     >
-      {/* <span className={s.icon}>{icon}</span> */}
       <span className={s.heading}>{text}</span>
     </button>
   );
@@ -24,7 +22,6 @@ const BigButton = ({
 
 BigButton.propTypes = {
   text: PropTypes.string,
-  // icon: PropTypes.oneOfType([PropTypes.bool, PropTypes.object]),
   disabled: PropTypes.bool,
   type: PropTypes.string,
  

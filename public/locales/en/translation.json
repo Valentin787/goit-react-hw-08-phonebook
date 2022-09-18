@@ -3,7 +3,10 @@
     "welcome":"Welcome",
     "btnOut":"Out",
     "homepage":"Homepage",
-    "phonebook":"Phonebook"
+    "phonebook":"Phonebook",
+    "clock":"Time",
+    "calendar":"Calendar"
+
   },
   "contactForm":{
     "headerForm":"Phonebook",
@@ -46,5 +49,12 @@
   
       "buttonRegister":"Register"
 
+  },
+  "clock":{
+    "title":"Time"
+  },
+    "calendar":{
+    "title":"Calendar",
+    "buttonBackToday":"Back to Today"
   }
 }

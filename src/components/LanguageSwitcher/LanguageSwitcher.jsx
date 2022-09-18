@@ -1,4 +1,3 @@
-
 import Appear from 'components/Appear';
 import { useTranslation } from 'react-i18next';
 import ukrFlagIcon from '../../image/icon-ukraine.png';
@@ -16,7 +15,7 @@ const languages = {
   }
 };
 
-const LanguageSwitcher = props => {
+const LanguageSwitcher = () => {
 
   const { i18n } = useTranslation();
 

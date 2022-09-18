@@ -4,8 +4,6 @@ import { ThemeContext, themes } from "components/context/themeContext";
 import PropTypes from "prop-types";
 import s from "./NavItem.module.css";
 
-
-
 const NavItem = ({ name, icon, link }) => {
 
   const { theme } = useContext(ThemeContext);
@@ -29,7 +27,6 @@ const NavItem = ({ name, icon, link }) => {
   );
 }
 NavItem.propTypes = {
-  // name: PropTypes.string,
   link: PropTypes.string.isRequired,
 };
 

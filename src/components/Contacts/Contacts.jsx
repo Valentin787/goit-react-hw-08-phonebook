@@ -124,7 +124,7 @@ const Contacts = () => {
   }, [action, activeContact, dispatch]);
 
 
-  // FILTER CITY
+  // FILTER 
 
   const filterChangeInput = (value) => dispatch(filterContacts(value))
   
@@ -180,7 +180,7 @@ const Contacts = () => {
 {openModal ===  ACTION.EDIT && <Modal
         closeModal={closeEditModal}>
           <EditCard
-            activeContact={activeContact}
+            activeElement={activeContact}
             onSubmit={confirmEdit}
           />
         </Modal>}
@@ -190,8 +190,6 @@ const Contacts = () => {
     
   )
 }
-
-Contacts.propTypes = {}
 
 export default Contacts
 

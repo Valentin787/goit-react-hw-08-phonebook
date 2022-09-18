@@ -23,12 +23,8 @@ const SingInForm = () => {
 
   const isBtnDisabled = !email || !password;
 
-  const onFinish = (values) => {
-    dispatch(authOperations.logIn({ email, password }));
-
-    // setEmail('');
-    // setPassword('');
-  };
+  const onFinish = (values) => dispatch(authOperations.logIn({ email, password }));
+  
 
  
   const checkLang = lang[1].language;

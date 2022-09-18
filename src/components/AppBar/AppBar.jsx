@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { authSelectors } from 'redux/auth'
 import AuthNav from 'components/AuthNav';
 import Navigation from 'components/Navigation';

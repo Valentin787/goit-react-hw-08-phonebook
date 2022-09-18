@@ -19,12 +19,16 @@ import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
 const SingInPageLazy = lazy(() => import('../../pages/auth/SingInPage'));
 const RegisterLazy = lazy(() => import('../../pages/auth/Register'));
 const ContactsPageLazy = lazy(() => import('../../pages/ContactsPage'));
+const ClockPageLazy = lazy(() => import('../../pages/ClockPage/ClockPage'));
+const CalendarPageLazy = lazy(() => import('../../pages/CalendarPage/CalendarPage'));
 const NotFoundPageLazy = lazy(() => import('../../pages/NotFoundPage'));
 
 
-const App = () => {
 
-  const [theme, setTheme] = useState(themes.light);
+const App = () => {
+  let time = new Date().getHours();
+  const [theme, setTheme] = useState(time <= 18 ? themes.light:themes.dark);
+  
   const toggleTheme = () =>
     setTheme((prevTheme) =>
       prevTheme === themes.light ? themes.dark : themes.light
@@ -34,6 +38,7 @@ const App = () => {
   const fetchloading = useSelector(authSelectors.loadingFetchSelector);
 
   const dispatch = useDispatch();
+ 
 
 
   //GET_CURRENT_USER
@@ -45,7 +50,7 @@ const App = () => {
   }, [dispatch])
   
   return (
-    <div className={theme === themes.light ? s.appLight : s.appDark}>
+    <div className={theme === themes.light? s.appLight : s.appDark}>
 
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
 
@@ -115,7 +120,21 @@ const App = () => {
                     <ContactsPageLazy />
                   </Suspense>}
               />
-          </Route>
+              <Route
+                path="/clock"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <ClockPageLazy/>
+                  </Suspense>}
+              />
+              <Route
+                path="/calendar"
+                element={
+                  <Suspense fallback={<Loader />}>
+                    <CalendarPageLazy/>
+                  </Suspense>}
+              />
+            </Route>
 
           </Routes>
           </>}

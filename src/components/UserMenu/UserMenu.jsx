@@ -12,6 +12,7 @@ import s from './UserMenu.module.css'
 
 const UserMenu = () => {
 
+  
   const { theme } = useContext(ThemeContext);
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);

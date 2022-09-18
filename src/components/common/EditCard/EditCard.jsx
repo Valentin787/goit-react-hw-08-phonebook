@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 import s from "./EditCard.module.css";
 
-const EditCard = ({ onSubmit, activeContact }) => {
-  const [id, setId] = useState(activeContact.id)
-  const [name, setName] = useState(activeContact.name);
-  const [number, setNumber] = useState(activeContact.number)
+const EditCard = ({ onSubmit, activeElement }) => {
+  const [id, setId] = useState(activeElement.id)
+  const [name, setName] = useState(activeElement.name);
+  const [number, setNumber] = useState(activeElement.number)
 
   // USE REF
   const inputRef = useRef(null);

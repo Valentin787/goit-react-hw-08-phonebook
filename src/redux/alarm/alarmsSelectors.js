@@ -1,0 +1,1 @@
+export const alarmState = (state) => state.alarms.data.item;

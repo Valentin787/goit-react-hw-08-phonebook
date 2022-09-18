@@ -1,12 +1,17 @@
 import { createContext } from "react";
 
+
+let time = new Date().getHours();
+
 const themes = {
-  light: "light",
   dark: "dark",
+  light: "light",
+  
 };
+const themesColor = time <= 12 ? themes.light : themes.dark;
 
 const ThemeContext = createContext({
-  theme: themes.light,
+  theme: themesColor,
   toggleTheme: () => {},
 });
 

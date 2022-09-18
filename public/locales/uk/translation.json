@@ -3,7 +3,9 @@
     "welcome":"Ласкаво просимо",
     "btnOut":"Вийти",
     "homepage":"Головна сторінка",
-    "phonebook":"Телефонна книга"
+    "phonebook":"Телефонна книга",
+    "clock":"Час",
+    "calendar":"Календар"
   },
     "contactForm":{
     "headerForm":"Телефонна книга",
@@ -44,5 +46,12 @@
       "placeholderPassword":"Введіть будь-ласка ваш пароль  ...",
       "buttonRegister":"Зареєструватись"
 
+  },
+    "clock":{
+    "title":"Час"
+  },
+    "calendar":{
+    "title":"Календар",
+    "buttonBackToday":"Повернутись до сьогодні"
   }
 }

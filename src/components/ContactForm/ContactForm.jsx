@@ -14,6 +14,7 @@ const ContactForm = ({confirmContact}) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+
   const normalizeName = name => name
       .split(' ')
       .map(word => {

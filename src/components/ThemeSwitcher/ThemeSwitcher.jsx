@@ -3,14 +3,16 @@ import { ThemeContext, themes } from "../../components/context/themeContext";
 import Switch from "react-switch";
 import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
-
-
-
-import s from "./ThemeSwitcher.module.css";
 import Appear from "components/Appear";
 
+import s from "./ThemeSwitcher.module.css";
+
+
 const ThemeSwitcher = () => {
+ 
   const { theme, toggleTheme } = useContext(ThemeContext);
+  // console.log(theme)
+  // console.log(ThemeContext)
 
   return (
     <Appear time={350}>
@@ -75,14 +77,11 @@ const ThemeSwitcher = () => {
               </div>
             }
           />
-          {/* <div className={s.switchOn}></div> */}
         </label>
       </div>
       </div>
        </Appear>
   );
 };
-
-ThemeSwitcher.propTypes = {};
 
 export default ThemeSwitcher;

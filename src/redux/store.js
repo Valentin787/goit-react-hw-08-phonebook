@@ -11,8 +11,11 @@ import {
   REGISTER,
 } from 'redux-persist'
 
-import storage from 'redux-persist/lib/storage' 
+import storage from 'redux-persist/lib/storage';
+import alarmReducer from './alarm/alarmReducer'; 
+import eventsReducer from "./event/eventsReducers";
 import phoneBookReducer from './phoneBook/phoneBookReducer'
+
 import authReducer from './auth/authSlice';
 
 const logger = createLogger({
@@ -37,6 +40,8 @@ const store = configureStore({
   reducer: { 
     auth:persistReducer(persistAuthConfig, authReducer),
     contacts: persistReducer(persistContactsConfig, phoneBookReducer),
+    alarms: alarmReducer,
+    events:eventsReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
     serializableCheck: {

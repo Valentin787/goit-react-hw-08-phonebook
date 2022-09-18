@@ -1,0 +1,55 @@
+.clockText {
+  display: flex;
+  justify-content: center;
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+.clockDate {
+  text-align: center;
+  font-size: 22px;
+
+  font-weight: var(--font-medium);
+  /* font-weight: 900; */
+  margin-bottom: 10px;
+}
+
+.ampm{
+  composes:clockText;
+  font-size: var(--tiny-font-size);
+  margin-left: var(--mb-0-25);
+}
+
+.hourLight{
+  composes:clockText;
+  color: black;
+}
+.hourDark {
+  composes: clockText;
+  color: white;
+}
+.minutesLight {
+  composes: clockText;
+  color: black;
+}
+.minutesDark {
+  composes: clockText;
+  color: white;
+}
+.ampmLight{
+  composes:ampm;
+  color: black;
+}
+.ampmDark {
+  composes: ampm;
+  color: white;
+}
+
+.clockDateLight{
+  composes:clockDate;
+  color: black;
+}
+.clockDateDark{
+  composes:clockDate;
+  color: white;
+}
